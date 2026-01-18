@@ -1,0 +1,166 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>About Us</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+
+<body> 
+    <header class="menu-header"> 
+        <img src="logo.png" class="logo" alt="Logo" style="width:200px; height:200px; border-radius:50%;">
+        <h1>Menu</h1> 
+        <nav> 
+            <ul> 
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about.html">About</a></li> 
+                <li><a href="menu.html">Menu</a></li> 
+                <li><a href="contact.html">Contact</a></li> 
+                <li><a href="Reservation.html">Reservation</a></li>
+            </ul> 
+        </nav> 
+    </header> 
+     <a href="reservation.html" class="reserve-btn">Reserve a Table</a>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Harissa – Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <h1>Our Menu</h1>
+        <p class="subtitle">
+            Discover authentic Tunisian cuisine, from hearty couscous to flavorful stews,
+            all prepared with traditional spices and time-honored techniques.
+        </p>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" onclick="showTab('starters')">Starters</button>
+        <button class="tab" onclick="showTab('mains')">Mains</button>
+        <button class="tab" onclick="showTab('desserts')">Desserts</button>
+    </div>
+
+    <!-- STARTERS -->
+    <section id="starters" class="menu-section">
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <h3>Lablabi</h3>
+                <p>Traditional chickpea soup with harissa, olive oil, capers, and crusty bread</p>
+                <span class="price">AED 54</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Brik à l'Oeuf</h3>
+                <p>Crispy pastry filled with egg, tuna, capers, and parsley</p>
+                <span class="price">AED 31</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Mechouia Salad</h3>
+                <p>Grilled pepper and tomato salad with tuna, olive oil, and spices</p>
+                <span class="price">AED 37</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Harissa & Olive Platter</h3>
+                <p>House-made harissa with assorted Tunisian olives and warm bread</p>
+                <span class="price">AED 19</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAINS -->
+    <section id="mains" class="menu-section hidden">
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <h3>Couscous Royal</h3>
+                <p>Traditional couscous with lamb, merguez, chicken, and seasonal vegetables</p>
+                <span class="price">AED 40</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Couscous Poisson</h3>
+                <p>Fish couscous with sea bass, grouper, and spicy fish broth</p>
+                <span class="price">AED 65</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Ojja Merguez</h3>
+                <p>Spicy tomato stew with merguez sausage, bell peppers, and poached eggs</p>
+                <span class="price">AED 45</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Molokhia</h3>
+                <p>Slow-cooked jute leaves with lamb, aromatic spices, and rice</p>
+                <span class="price">AED 62</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Kamounia</h3>
+                <p>Beef stew with cumin, tomatoes, chickpeas, and warm spices</p>
+                <span class="price">AED 45</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Tajine Tunisien</h3>
+                <p>Baked egg dish with lamb, cheese, vegetables, and Tunisian spices</p>
+                <span class="price">AED 35</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section id="desserts" class="menu-section hidden">
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <h3>Makroud</h3>
+                <p>Semolina cookies filled with dates, fried and soaked in honey</p>
+                <span class="price">AED 19</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Baklawa Tunisien</h3>
+                <p>Crispy phyllo with almonds, honey, and orange blossom</p>
+                <span class="price">AED 12</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Assida Zgougou</h3>
+                <p>Pine-nut pudding topped with cream</p>
+                <span class="price">AED 31</span>
+            </div>
+
+            <div class="menu-card">
+                <h3>Zlebia</h3>
+                <p>Deep-fried dough soaked in honey syrup with rose water</p>
+                <span class="price">AED 21</span>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll(".menu-section").forEach(s => s.classList.add("hidden"));
+            document.getElementById(tabName).classList.remove("hidden");
+
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            event.target.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
