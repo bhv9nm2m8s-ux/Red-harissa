@@ -17,31 +17,33 @@
                 <li><a href="menu.html">Menu</a></li> 
                 <li><a href="contact.html">Contact</a></li> 
                 <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="reservation-validation.html" class="admin-link active" title="Admin Only">🔒 Admin</a></li>
             </ul> 
         </nav> 
     </header> 
 
-<form class="reservation-form" id="reservationForm">
-
-    <div class="form-group">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-    </div>
-
-    <div class="form-group">
-        <input type="number" id="phone" placeholder="Phone Number" required>
-        <input type="number" id="guests" placeholder="Guests" min="1" value="2" required>
-    </div>
-
-    <input type="datetime-local" id="date" class="full-input" required>
-
-    <textarea id="comment" class="full-input" placeholder="Special Requests..."></textarea>
-
-    <button type="submit" class="reserve-submit-btn">
-        Submit Reservation
-    </button>
-
-</form>
+<h2>Pending Reservations</h2>
+<div class="reservations-container">
+    <table class="reservations-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Guests</th>
+                <th>Date & Time</th>
+                <th>Special Requests</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="reservationsTableBody">
+            <tr>
+                <td colspan="8" style="text-align: center; padding: 20px;">Loading reservations...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -52,7 +54,7 @@
 <!-- 🔥 FIREBASE + FIRESTORE INTEGRATION -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, Timestamp } 
+  import { getFirestore, collection, addDoc, Timestamp, query, where, getDocs, updateDoc, doc } 
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
   // ✅ YOUR REAL FIREBASE CONFIG
@@ -69,24 +71,84 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  document.getElementById("reservationForm")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const dateValue = document.getElementById("date").value;
-
-      await addDoc(collection(db, "reservations"), {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: Number(document.getElementById("phone").value),
-        guests: Number(document.getElementById("guests").value),
-        comment: document.getElementById("comment").value,
-        date: Timestamp.fromDate(new Date(dateValue))
-      });
-
-      alert("Reservation submitted successfully!");
-      e.target.reset();
+  // Function to format date and time
+  function formatDateTime(timestamp) {
+    if (!timestamp || !timestamp.toDate) {
+      return "Invalid Date";
+    }
+    const date = timestamp.toDate();
+    return date.toLocaleString('en-US', { 
+      year: 'numeric', 
+      month: '2-digit', 
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
     });
+  }
+
+  // Function to load all reservations
+  async function loadReservations() {
+    const tableBody = document.getElementById("reservationsTableBody");
+    tableBody.innerHTML = ""; // Clear existing rows
+
+    try {
+      const q = query(collection(db, "reservations"));
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">No reservations found</td></tr>';
+        return;
+      }
+
+      querySnapshot.forEach((docSnapshot) => {
+        const data = docSnapshot.data();
+        const docId = docSnapshot.id;
+        const status = data.status || "pending";
+
+        const row = document.createElement("tr");
+        row.className = status === "validated" ? "validated-row" : "pending-row";
+        
+        row.innerHTML = `
+          <td>${data.name || "N/A"}</td>
+          <td>${data.email || "N/A"}</td>
+          <td>${data.phone || "N/A"}</td>
+          <td>${data.guests || "N/A"}</td>
+          <td>${formatDateTime(data.date)}</td>
+          <td>${data.comment || "None"}</td>
+          <td><span class="status-badge ${status}">${status.charAt(0).toUpperCase() + status.slice(1)}</span></td>
+          <td>
+            ${status === "validated" ? 
+              '<span class="validated-check">✓ Validated</span>' : 
+              `<button class="validate-btn" onclick="validateReservation('${docId}')">Validate</button>`
+            }
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    } catch (error) {
+      console.error("Error loading reservations:", error);
+      tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: red;">Error loading reservations</td></tr>';
+    }
+  }
+
+  // Function to validate a reservation
+  window.validateReservation = async function(docId) {
+    try {
+      const reservationRef = doc(db, "reservations", docId);
+      await updateDoc(reservationRef, {
+        status: "validated"
+      });
+      alert("Reservation validated successfully!");
+      loadReservations(); // Reload the table
+    } catch (error) {
+      console.error("Error validating reservation:", error);
+      alert("Error validating reservation");
+    }
+  };
+
+  // Load reservations on page load
+  loadReservations();
 </script>
 
 </body> 
