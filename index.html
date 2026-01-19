@@ -11,10 +11,9 @@
 
     <!-- Header with background image -->
     <header class="home-header">
-        <img src="logo.png" class="logo" alt="Logo" style="width:200px; height:200px; border-radius:50%;">
-        <h1>Restaurant Menu</h1>
-
-        <nav> 
+        <a href="reservation.html" class="reserve-btn">Reserve a Table</a>
+        
+        <nav class="main-nav"> 
             <ul> 
                 <li><a href="index.html" class="active">Home</a></li> 
                 <li><a href="about.html">About</a></li> 
@@ -24,18 +23,84 @@
                 <li><a href="reservation-validation.html" class="admin-link" title="Admin Only">🔒 Admin</a></li>
             </ul> 
         </nav>
-    </header> 
-      <a href="reservation.html" class="reserve-btn">Reserve a Table</a>
-</header>
+
+        <div class="hero-content">
+            <img src="logo.png" class="logo" alt="Red Harissa Logo">
+            <h1>Red Harissa</h1>
+            <p class="tagline">Authentic Flavors, Exceptional Experience</p>
+        </div>
+    </header>
+
     <!-- Homepage Content --> 
-    <section> 
-        <h2>Welcome to Red Harissa Restaurant</h2> 
-        <p>This is the homepage where you introduce your site.</p> 
-    </section> 
+    <section class="welcome-section"> 
+        <div class="container">
+            <h2>Welcome to Our Restaurant</h2> 
+            <p class="intro-text">Experience the vibrant taste of authentic cuisine with a modern twist. 
+            Discover seasonal ingredients, expertly crafted dishes, and exceptional service in an elegant atmosphere.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Premium Quality</h3>
+                    <p>Sourced from the finest suppliers for authentic and fresh ingredients</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Expert Chefs</h3>
+                    <p>Award-winning culinary team bringing decades of experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Elegant Ambiance</h3>
+                    <p>Beautiful setting perfect for any occasion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for an unforgettable experience?</h2>
+            <p>Join us for dinner and taste the difference</p>
+            <div class="cta-buttons">
+                <a href="menu.html#starters" class="cta-button">View Starters</a>
+                <a href="menu.html#mains" class="cta-button">View Main Courses</a>
+                <a href="menu.html#desserts" class="cta-button">View Desserts</a>
+            </div>
+        </div>
+    </section>
  
     <!-- Footer --> 
     <footer> 
-        <p>&copy; 2025 Red Harissa. All Rights Reserved.</p> 
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Red Harissa</h4>
+                <p>Authentic cuisine with a contemporary touch</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@redharissa.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Red Harissa Restaurant. All Rights Reserved.</p>
+        </div>
     </footer> 
  
 </body> 

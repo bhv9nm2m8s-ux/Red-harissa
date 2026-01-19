@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Reservation</title> 
+    <title>Reserve a Table - Red Harissa Restaurant</title> 
     <link rel="stylesheet" href="style.css"> 
 </head> 
 <body> 
-    <header class="menu-header"> 
-        <img src="logo.png" class="logo" alt="Logo" style="width:200px; height:200px; border-radius:50%;">
-        <h1>Reserve a Table</h1> 
-        <nav> 
+    <!-- Header -->
+    <header class="reservation-header"> 
+        <nav class="main-nav"> 
             <ul> 
                 <li><a href="index.html">Home</a></li> 
                 <li><a href="about.html">About</a></li> 
@@ -19,76 +18,195 @@
                 <li><a href="reservation.html" class="active">Reservation</a></li>
                 <li><a href="reservation-validation.html" class="admin-link" title="Admin Only">🔒 Admin</a></li>
             </ul> 
-        </nav> 
-    </header> 
+        </nav>
 
-<form class="reservation-form" id="reservationForm">
+        <div class="header-content">
+            <img src="logo.png" class="header-logo" alt="Red Harissa Logo">
+            <h1>Reserve a Table</h1>
+            <p>Book your perfect dining experience at Red Harissa</p>
+        </div>
+    </header>
 
-    <div class="form-group">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-    </div>
+    <!-- Main Content -->
+    <section class="reservation-section">
+        <div class="container">
+            <div class="reservation-container">
+                <!-- Info Box -->
+                <div class="reservation-info">
+                    <h2>Why Reserve with Us?</h2>
+                    
+                    <div class="info-box">
+                        <h3>⏰ Save Time</h3>
+                        <p>Skip the wait and secure your table in advance</p>
+                    </div>
 
-    <div class="form-group">
-        <input type="number" id="phone" placeholder="Phone Number" required>
-        <input type="number" id="guests" placeholder="Guests" min="1" value="2" required>
-    </div>
+                    <div class="info-box">
+                        <h3>👥 Perfect Atmosphere</h3>
+                        <p>We'll have everything ready for your group</p>
+                    </div>
 
-    <input type="datetime-local" id="date" class="full-input" required>
+                    <div class="info-box">
+                        <h3>🎉 Special Occasions</h3>
+                        <p>Let us know about celebrations, we love making memories</p>
+                    </div>
 
-    <textarea id="comment" class="full-input" placeholder="Special Requests..."></textarea>
+                    <div class="info-box">
+                        <h3>📞 Confirmed Booking</h3>
+                        <p>We'll send you a confirmation with all details</p>
+                    </div>
+                </div>
 
-    <button type="submit" class="reserve-submit-btn">
-        Submit Reservation
-    </button>
+                <!-- Reservation Form -->
+                <div class="form-container">
+                    <h2>Your Reservation Details</h2>
+                    <form class="reservation-form" id="reservationForm">
 
-</form>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" placeholder="+971 55 123 4567" required>
+                        </div>
 
-<footer class="about-content"> 
-    <p>&copy; 2025 Red Harissa Restaurant. All Rights Reserved.</p> 
-</footer> 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date & Time *</label>
+                                <input type="datetime-local" id="date" required>
+                            </div>
 
-<!-- 🔥 FIREBASE + FIRESTORE INTEGRATION -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, Timestamp } 
-  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <input type="number" id="guests" placeholder="2" min="1" max="20" value="2" required>
+                            </div>
+                        </div>
 
-  // ✅ YOUR REAL FIREBASE CONFIG
-  const firebaseConfig = {
-    apiKey: "AIzaSyCkEntQq8LebGepdzZ9cTnk6L369SKCTDI",
-    authDomain: "redharissa-7954c.firebaseapp.com",
-    projectId: "redharissa-7954c",
-    storageBucket: "redharissa-7954c.firebasestorage.app",
-    messagingSenderId: "78461687960",
-    appId: "1:78461687960:web:210f509584962f91f1d8ed",
-    measurementId: "G-680MSLCS1E"
-  };
+                        <div class="form-group">
+                            <label for="comment">Special Requests</label>
+                            <textarea id="comment" placeholder="Any special requests or dietary requirements?" rows="4"></textarea>
+                        </div>
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+                        <button type="submit" class="reserve-submit-btn">
+                            Confirm Reservation
+                        </button>
 
-  document.getElementById("reservationForm")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
+                        <p class="form-note">* Required fields. We'll contact you to confirm your reservation.</p>
 
-      const dateValue = document.getElementById("date").value;
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      await addDoc(collection(db, "reservations"), {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: Number(document.getElementById("phone").value),
-        guests: Number(document.getElementById("guests").value),
-        comment: document.getElementById("comment").value,
-        date: Timestamp.fromDate(new Date(dateValue))
-      });
+    <!-- Additional Info Section -->
+    <section class="reservation-details-section">
+        <div class="container">
+            <h2>Reservation Information</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <span class="detail-icon">🕐</span>
+                    <h3>Operating Hours</h3>
+                    <p>Mon - Sun: 12:00 PM - 11:00 PM</p>
+                    <p>Friday: 1:00 PM - 11:00 PM</p>
+                </div>
 
-      alert("Reservation submitted successfully!");
-      e.target.reset();
-    });
-</script>
+                <div class="detail-card">
+                    <span class="detail-icon">👥</span>
+                    <h3>Group Size</h3>
+                    <p>We welcome groups from 1 to 20 guests</p>
+                    <p>For larger groups, please call us directly</p>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">📍</span>
+                    <h3>Cancellation Policy</h3>
+                    <p>Free cancellation up to 2 hours before</p>
+                    <p>Please call us if you need to cancel</p>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">💬</span>
+                    <h3>Need Help?</h3>
+                    <p>Call us at +971 55 123 4567</p>
+                    <p>Email: RedHarissa@restaurant.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Red Harissa</h4>
+                <p>Authentic Tunisian cuisine with a contemporary touch</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: +971 55 123 4567</p>
+                <p>Email: RedHarissa@restaurant.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Red Harissa Restaurant. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 🔥 FIREBASE + FIRESTORE INTEGRATION -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore, collection, addDoc, Timestamp } 
+      from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      // ✅ YOUR REAL FIREBASE CONFIG
+      const firebaseConfig = {
+        apiKey: "AIzaSyCkEntQq8LebGepdzZ9cTnk6L369SKCTDI",
+        authDomain: "redharissa-7954c.firebaseapp.com",
+        projectId: "redharissa-7954c",
+        storageBucket: "redharissa-7954c.firebasestorage.app",
+        messagingSenderId: "78461687960",
+        appId: "1:78461687960:web:210f509584962f91f1d8ed",
+        measurementId: "G-680MSLCS1E"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      document.getElementById("reservationForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const dateValue = document.getElementById("date").value;
+
+          await addDoc(collection(db, "reservations"), {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            guests: Number(document.getElementById("guests").value),
+            comment: document.getElementById("comment").value,
+            date: Timestamp.fromDate(new Date(dateValue))
+          });
+
+          alert("Reservation submitted successfully! We'll confirm shortly.");
+          e.target.reset();
+        });
+    </script>
 
 </body> 
 </html>

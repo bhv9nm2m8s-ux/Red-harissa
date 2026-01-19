@@ -43,3 +43,60 @@ I0118 21:28:34.935968   20676 load.go:109] Finished reloading
 [info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=19860628&redirect_uri=http%3A%2F%2Flocalhost%3A9005
 [info] 
 [info] Waiting for authentication...
+[debug] [2026-01-19T15:08:37.749Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Unable to check firebase-tools installation: TypeError: fetch failed
+[debug] [2026-01-19T15:08:49.441Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2026-01-19T15:08:49.443Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-19T15:08:49.512Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[error] [Firebase Plugin] requireAuth error: Could not load the default credentials. Browse to https://cloud.google.com/docs/authentication/getting-started for more information.
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 3.0.2) on port 50001
+[debug] [2026-01-19T15:08:51.012Z] I0119 19:08:50.987580    9220 control.go:100] [/emulator/red-harissa b145] UpdateResources(): done
+Main schema: sources: schema\schema.gql [2044B] 
+Connector "example": sources: example\mutations.gql [1276B] example\queries.gql [1879B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:50.987580    9220 control.go:100] [/emulator/red-harissa b145] UpdateResources(): done\nMain schema: sources: schema\\schema.gql [2044B] \nConnector \"example\": sources: example\\mutations.gql [1276B] example\\queries.gql [1879B] \n"}}
+[debug] [2026-01-19T15:08:51.013Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2026-01-19T15:08:51.013Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2026-01-19T15:08:51.013Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\walid\\.cache\\firebase\\emulators\\dataconnect-emulator-3.0.2.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=d:\\Rayan\\Red-harissa\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\walid\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-3.0.2.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=d:\\\\Rayan\\\\Red-harissa\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2026-01-19T15:08:51.061Z] I0119 19:08:51.041435    6904 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:51.041435    6904 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-01-19T15:08:51.081Z] I0119 19:08:51.080832    6904 control.go:100] [/emulator/red-harissa fe58] UpdateResources(): done
+Main schema: sources: schema\schema.gql [2044B] 
+Connector "example": sources: example\mutations.gql [1276B] example\queries.gql [1879B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:51.080832    6904 control.go:100] [/emulator/red-harissa fe58] UpdateResources(): done\nMain schema: sources: schema\\schema.gql [2044B] \nConnector \"example\": sources: example\\mutations.gql [1276B] example\\queries.gql [1879B] \n"}}
+[debug] [2026-01-19T15:08:51.121Z] I0119 19:08:51.121469    6904 collector.go:107] schema extensions wrote into "d:\\Rayan\\Red-harissa\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73281B] main\implicit.gql [1261B] main\input.gql [28173B] main\relation.gql [14318B] main\query.gql [5099B] main\mutation.gql [13679B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:51.121469    6904 collector.go:107] schema extensions wrote into \"d:\\\\Rayan\\\\Red-harissa\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73281B] main\\implicit.gql [1261B] main\\input.gql [28173B] main\\relation.gql [14318B] main\\query.gql [5099B] main\\mutation.gql [13679B] \n"}}
+[debug] [2026-01-19T15:08:51.122Z] I0119 19:08:51.121469    6904 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:51.121469    6904 load.go:109] Finished reloading\n"}}
+[debug] [2026-01-19T15:08:51.156Z] I0119 19:08:51.156426    6904 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:51.156426    6904 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2026-01-19T15:08:52.230Z] I0119 19:08:52.230349    6904 engine.go:178] [/emulator/red-harissa fe58] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 19:08:52.230349    6904 engine.go:178] [/emulator/red-harissa fe58] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2026-01-19T19:53:35.907Z] [Firebase Plugin] Activating Firebase extension.
+[debug] [2026-01-19T19:53:37.421Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2026-01-19T19:53:37.423Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-19T19:53:37.448Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[error] [Firebase Plugin] requireAuth error: Could not load the default credentials. Browse to https://cloud.google.com/docs/authentication/getting-started for more information.
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 3.0.2) on port 50001
+[debug] [2026-01-19T19:53:39.082Z] I0119 23:53:39.059309   21724 control.go:100] [/emulator/red-harissa ddb6] UpdateResources(): done
+Main schema: sources: schema\schema.gql [2044B] 
+Connector "example": sources: example\mutations.gql [1276B] example\queries.gql [1879B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 23:53:39.059309   21724 control.go:100] [/emulator/red-harissa ddb6] UpdateResources(): done\nMain schema: sources: schema\\schema.gql [2044B] \nConnector \"example\": sources: example\\mutations.gql [1276B] example\\queries.gql [1879B] \n"}}
+[debug] [2026-01-19T19:53:39.083Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2026-01-19T19:53:39.083Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2026-01-19T19:53:39.083Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\walid\\.cache\\firebase\\emulators\\dataconnect-emulator-3.0.2.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=d:\\Rayan\\Red-harissa\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\walid\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-3.0.2.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=d:\\\\Rayan\\\\Red-harissa\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2026-01-19T19:53:39.139Z] I0119 23:53:39.110617   16996 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 23:53:39.110617   16996 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-01-19T19:53:39.196Z] I0119 23:53:39.145588   16996 control.go:100] [/emulator/red-harissa 9d64] UpdateResources(): done
+Main schema: sources: schema\schema.gql [2044B] 
+Connector "example": sources: example\mutations.gql [1276B] example\queries.gql [1879B] 
+I0119 23:53:39.180007   16996 collector.go:107] schema extensions wrote into "d:\\Rayan\\Red-harissa\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73281B] main\mutation.gql [13679B] main\implicit.gql [1261B] main\input.gql [28173B] main\relation.gql [14318B] main\query.gql [5099B] 
+I0119 23:53:39.180007   16996 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 23:53:39.145588   16996 control.go:100] [/emulator/red-harissa 9d64] UpdateResources(): done\nMain schema: sources: schema\\schema.gql [2044B] \nConnector \"example\": sources: example\\mutations.gql [1276B] example\\queries.gql [1879B] \nI0119 23:53:39.180007   16996 collector.go:107] schema extensions wrote into \"d:\\\\Rayan\\\\Red-harissa\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73281B] main\\mutation.gql [13679B] main\\implicit.gql [1261B] main\\input.gql [28173B] main\\relation.gql [14318B] main\\query.gql [5099B] \nI0119 23:53:39.180007   16996 load.go:109] Finished reloading\n"}}
+[debug] [2026-01-19T19:53:39.241Z] I0119 23:53:39.200837   16996 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 23:53:39.200837   16996 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2026-01-19T19:53:39.787Z] I0119 23:53:39.784669   16996 engine.go:178] [/emulator/red-harissa 9d64] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0119 23:53:39.784669   16996 engine.go:178] [/emulator/red-harissa 9d64] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}

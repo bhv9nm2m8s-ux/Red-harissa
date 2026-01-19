@@ -1,10 +1,15 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
-     <header class="menu-header"> 
-        <img src="logo.png" class="logo" alt="Logo" style="width:200px; height:200px; border-radius:50%;">
-        <h1>About Us</h1> 
-        <nav> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>About Us - Red Harissa Restaurant</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+    <!-- Header -->
+    <header class="about-header"> 
+        <nav class="main-nav"> 
             <ul> 
                 <li><a href="index.html">Home</a></li> 
                 <li><a href="about.html" class="active">About</a></li> 
@@ -13,54 +18,167 @@
                 <li><a href="reservation.html">Reservation</a></li>
                 <li><a href="reservation-validation.html" class="admin-link" title="Admin Only">🔒 Admin</a></li>
             </ul> 
-        </nav> 
+        </nav>
+        
+        <div class="header-content">
+            <h1>About Red Harissa</h1>
+            <p>Bringing Authentic Tunisian Flavors to Life</p>
+        </div>
     </header>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>About Us</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
 
-     <a href="reservation.html" class="reserve-btn">Reserve a Table</a>
-<section class="about-section">
-  <div class="about-content">
-    <h2>Our Story</h2>
+    <a href="reservation.html" class="reserve-btn">Reserve a Table</a>
 
-    <p>
-      Founded by the Hamdi family from Tunis, Red Harissa brings the authentic
-      taste of Tunisia to your neighborhood. Our recipes honor centuries-old
-      traditions while celebrating bold spices and vibrant flavors.
-    </p>
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>Our Story</h2>
+                    <p>
+                        Founded by the Hamdi family from Tunis, Red Harissa brings the authentic taste of Tunisia 
+                        to your neighborhood. Our recipes honor centuries-old traditions while celebrating bold spices 
+                        and vibrant flavors.
+                    </p>
+                    <p>
+                        From the bustling souks of Tunis to the coastal towns of Djerba, our menu tells a story of 
+                        heritage, family, and Mediterranean warmth. Every dish is a celebration of our roots and 
+                        our passion for culinary excellence.
+                    </p>
+                    <p>
+                        We believe that food is more than sustenance—it's a bridge between cultures, a way to connect, 
+                        and an expression of love. That's what you'll taste in every bite at Red Harissa.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src="logo.png" alt="Red Harissa Logo" class="about-logo">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      From the bustling souks of Tunis to the coastal towns of Djerba, our menu
-      tells a story of heritage, family, and Mediterranean warmth.
-    </p>
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">👨‍👩‍👧‍👦</span>
+                    <h3>Family Tradition</h3>
+                    <p>Sharing the warmth of Tunisian hospitality and generations of culinary wisdom</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">❤️</span>
+                    <h3>Made with Love</h3>
+                    <p>Every dish prepared with care, passion, and attention to detail</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌶️</span>
+                    <h3>Authentic Recipes</h3>
+                    <p>Traditional Tunisian dishes passed down through generations unchanged</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌾</span>
+                    <h3>Quality Ingredients</h3>
+                    <p>Sourced from trusted suppliers who share our commitment to excellence</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🤝</span>
+                    <h3>Community</h3>
+                    <p>Creating a welcoming space where neighbors become family</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">✨</span>
+                    <h3>Excellence</h3>
+                    <p>Striving for perfection in every aspect of our service and cuisine</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="about-features">
-      <div class="feature">
-        <img src="family.png" size="35px" alt="Family Tradition Icon">
-        <h4>Family Tradition</h4>
-        <p>Sharing the warmth of Tunisian hospitality</p>
-      </div>
-      <div class="feature">
-        <img src="love.png" size="35px" alt="Made with Love Icon">
-        <h4>Made with Love</h4>
-        <p>Every dish prepared with care and passion</p>
-      </div>
-      <div class="feature">
-        <img src="authentic.png" size="35px" alt="Authentic Recipes Icon">
-        <h4>Authentic Recipes</h4>
-        <p>Traditional Tunisian dishes passed down through generations</p>
-      </div>
-    </div>
-  </div>
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p class="section-intro">Our passionate team brings decades of experience and dedication to every meal</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🍳</div>
+                    <h3>Chef Mohamed Hamdi</h3>
+                    <p class="member-title">Executive Chef & Founder</p>
+                    <p>Traditional Tunisian cuisine expert with 30+ years of experience</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍🍳</div>
+                    <h3>Chef Fatima Hamdi</h3>
+                    <p class="member-title">Chef de Cuisine</p>
+                    <p>Specializes in traditional sauces and seafood preparations</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">🎯</div>
+                    <h3>Karim Hamdi</h3>
+                    <p class="member-title">Restaurant Manager</p>
+                    <p>Ensures exceptional service and an unforgettable dining experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="about-image">
-    <img src="logo.png" alt="Red Harissa Logo">
-  </div>
-</section>
+    <!-- Why Choose Us Section -->
+    <section class="why-us-section">
+        <div class="container">
+            <h2>Why Choose Red Harissa?</h2>
+            <div class="reasons-grid">
+                <div class="reason">
+                    <div class="reason-number">1</div>
+                    <h3>Authentic Cuisine</h3>
+                    <p>True Tunisian recipes with no compromises on authenticity or flavor</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-number">2</div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Daily sourced ingredients ensuring the highest quality standards</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-number">3</div>
+                    <h3>Warm Atmosphere</h3>
+                    <p>An elegant yet welcoming environment perfect for any occasion</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-number">4</div>
+                    <h3>Expert Staff</h3>
+                    <p>Knowledgeable team ready to guide you through our menu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Red Harissa</h4>
+                <p>Authentic Tunisian cuisine with a contemporary touch</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@redharissa.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Red Harissa Restaurant. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body> 
 </html> 
 
